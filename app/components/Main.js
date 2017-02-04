@@ -3,7 +3,9 @@ import React, { PropTypes } from 'react'
 const Main = (props) => {
   return (
     <div className='main_container'>
-      {/* This is where the header will go  */}
+      <div>
+        <h1>Title goes here</h1>
+      </div>
       {props.children}
     </div>
   )
