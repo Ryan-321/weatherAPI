@@ -17,13 +17,28 @@ const styles = {
     margin: 'auto',
     alignSelf: 'center'
   },
-  input: {
-    padding: '.4em',
+  input_home: {
+    padding: '.5em',
     borderRadius: '2px',
-    display: 'block',
     fontSize: '1.2em',
     margin: '0 auto',
-    marginBottom: '1em'
+    width: '60%'
+  },
+  input_header: {
+    marginRight: '.5em'
+  },
+  button: {
+    margin: '1em auto',
+    display: 'block'
+  },
+  header: {
+    margin: '0',
+    border: '0',
+    borderRadius: '0',
+    backgroundColor: 'orange'
+  },
+  form_header: {
+    marginTop: '1em'
   }
 }
 

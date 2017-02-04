@@ -1,11 +1,10 @@
 import React, { PropTypes } from 'react'
+import Header from './Header'
 
 const Main = (props) => {
   return (
     <div className='main_container'>
-      <div>
-        <h1>Title goes here</h1>
-      </div>
+      <Header />
       {props.children}
     </div>
   )
