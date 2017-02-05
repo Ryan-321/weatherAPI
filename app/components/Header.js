@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styles from '../styles'
-import Form from './Form'
+import FormContainer from '../containers/FormContainer'
 
 export default class Header extends Component {
   render () {
@@ -10,7 +10,7 @@ export default class Header extends Component {
           <div className='navbar-header'>
             <h1 className='navbar-brand' style={{color: '#fff', fontSize: '2em'}}>WeatherAPI</h1>
           </div>
-          <Form
+          <FormContainer
             passClass='navbar-form navbar-right'
             styleInput={styles.input_header}
             passStyle={styles.form_header}
