@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import Form from '../components/Form'
+import weatherHelper from '../utils/weatherHelper'
 
 export default class FormContainer extends Component {
   constructor (props) {
@@ -20,6 +21,8 @@ export default class FormContainer extends Component {
     var search = this.state.search
     // need to do something with search results
     // put into API and call
+    var results = weatherHelper.getCurrentWeather(search)
+    console.log(results)
   }
   render () {
     console.log(this)
