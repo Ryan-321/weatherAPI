@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
-// should make this just a function component
+import { Link } from 'react-router'
+
 const Form = (props) => {
   return (
     <form
@@ -15,10 +16,14 @@ const Form = (props) => {
           onChange={props.onHandleChange}
         />
       </div>
-      <button
-        className='btn btn-success'
-        style={props.styleButton}
-      >Get Weather</button>
+      <Link to={`/forecast/${props.city}`}>
+        <button
+          className='btn btn-success'
+          style={props.styleButton}
+          >
+            Get Weather
+        </button>
+      </Link>
     </form>
   )
 }
@@ -29,7 +34,8 @@ Form.propTypes = {
   onHandleChange: PropTypes.func.isRequired,
   onHandleSubmit: PropTypes.func.isRequired,
   passClass: PropTypes.string,
-  passStyle: PropTypes.object
+  passStyle: PropTypes.object,
+  city: PropTypes.string
 }
 
 export default Form

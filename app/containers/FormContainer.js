@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import Form from '../components/Form'
-import weatherHelper from '../utils/weatherHelper'
 
 export default class FormContainer extends Component {
   constructor (props) {
@@ -18,15 +17,11 @@ export default class FormContainer extends Component {
   }
   handleSubmit (e) {
     e.preventDefault()
-    var search = this.state.search
-    // need to do something with search results
-    // put into API and call
-    var results = weatherHelper.getCurrentWeather(search)
-    console.log(results)
+    this.setState({
+      search: ''
+    })
   }
   render () {
-    console.log(this)
-    console.log(this.props)
     return (
       <Form
         passClass={this.props.passClass}
@@ -35,6 +30,7 @@ export default class FormContainer extends Component {
         passStyle={this.props.passStyle}
         styleInput={this.props.styleInput}
         styleButton={this.props.styleButton}
+        city={this.state.search}
       />
     )
   }
