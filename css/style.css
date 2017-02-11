@@ -1,0 +1,24 @@
+
+.header {
+  margin: 0,
+  border: 0;
+  borderRadius: 0;
+  backgroundColor: orange;
+}
+.input_home {
+  padding: .5em;
+  borderRadius: 2px;
+  fontSize: 1.2em;
+  margin: 0 auto;
+  width: 60%;
+}
+.input_header {
+  marginRight: .5em;
+}
+.button {
+  margin: 1em auto;
+  display: block;
+}
+.form_header {
+  marginTop: 1em;
+}
