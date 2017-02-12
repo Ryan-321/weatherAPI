@@ -5,7 +5,6 @@ const Form = (props) => {
   return (
     <form
       className={props.passClass}
-      style={props.passStyle}
       onSubmit={props.onHandleSubmit}
     >
       <div className='form-group'>
@@ -33,8 +32,8 @@ Form.propTypes = {
   styleButton: PropTypes.object,
   onHandleChange: PropTypes.func.isRequired,
   onHandleSubmit: PropTypes.func.isRequired,
-  passClass: PropTypes.string,
   passStyle: PropTypes.object,
+  passClass: PropTypes.string,
   city: PropTypes.string
 }
 

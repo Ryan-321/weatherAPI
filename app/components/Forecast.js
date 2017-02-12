@@ -8,13 +8,22 @@ const Forecast = (props) => {
   }
   return (
     <div>
-      Forecast page
+      <ul>
+        <li>{props.tempDay}</li>
+        <li>{props.tempEve}</li>
+        <li>{props.description}</li>
+        <li>{props.humidity}</li>
+      </ul>
     </div>
   )
 }
 
 Forecast.propTypes = {
-  isLoading: PropTypes.bool.isRequired
+  isLoading: PropTypes.bool.isRequired,
+  tempDay: PropTypes.string.isRequired,
+  tempEve: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  humidity: PropTypes.string.isRequired
 }
 
 export default Forecast

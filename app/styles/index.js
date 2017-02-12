@@ -1,7 +1,4 @@
 const styles = {
-  main_container: {
-
-  },
   home_wrapper: {
     background: "url('../app/images/pattern.svg') no-repeat",
     height: '100vh',
@@ -39,6 +36,12 @@ const styles = {
   },
   form_header: {
     marginTop: '1em'
+  },
+  forecast_row: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center'
   }
 }
 

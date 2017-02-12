@@ -3,7 +3,7 @@ import Header from './Header'
 
 const Main = (props) => {
   return (
-    <div className='main_container'>
+    <div>
       <Header />
       {props.children}
     </div>
