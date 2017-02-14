@@ -26,15 +26,17 @@ export default class ForecastContainer extends Component {
       <div className='container-fluid'>
         <div className='row' style={styles.forecast_row}>
           {this.state.weather
-            .map((day) => {
-              return
+            .map((day, index) => {
+              return (
                 <Forecast
                   isLoading={this.state.isLoading}
                   tempDay={day.temp.day}
                   tempEve={day.temp.eve}
                   description={day.weather[0].description}
                   humidity={day.humidity}
+                  key={index}
                 />
+              )
             }
           )}
         </div>

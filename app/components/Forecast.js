@@ -20,10 +20,10 @@ const Forecast = (props) => {
 
 Forecast.propTypes = {
   isLoading: PropTypes.bool.isRequired,
-  tempDay: PropTypes.string.isRequired,
-  tempEve: PropTypes.string.isRequired,
+  tempDay: PropTypes.number.isRequired,
+  tempEve: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
-  humidity: PropTypes.string.isRequired
+  humidity: PropTypes.number.isRequired
 }
 
 export default Forecast
