@@ -12,6 +12,7 @@ const weatherHelper = {
   },
   getFiveDayForecast: (city) => {
     return axios.get(`http://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&type=accurate&appid=${API_KEY}&cnt=&units=imperial`).then((response) => {
+      // console.log(response)
       return response.data.list
     }).catch((error) => {
       console.log(error)

@@ -8,6 +8,8 @@ const Forecast = (props) => {
   }
   return (
     <div>
+      <img src={props.source} />
+      <p>{props.date}</p>
       <ul>
         <li>{props.tempDay}</li>
         <li>{props.tempEve}</li>
@@ -23,7 +25,8 @@ Forecast.propTypes = {
   tempDay: PropTypes.number.isRequired,
   tempEve: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
-  humidity: PropTypes.number.isRequired
+  humidity: PropTypes.number.isRequired,
+  source: PropTypes.string.isRequired
 }
 
 export default Forecast

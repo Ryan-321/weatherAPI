@@ -22,6 +22,7 @@ export default class ForecastContainer extends Component {
       }.bind(this))
   }
   render () {
+    console.log(this.state.weather)
     return (
       <div className='container-fluid'>
         <div className='row' style={styles.forecast_row}>
@@ -34,6 +35,8 @@ export default class ForecastContainer extends Component {
                   tempEve={day.temp.eve}
                   description={day.weather[0].description}
                   humidity={day.humidity}
+                  source={`http://openweathermap.org/img/w/${day.weather[0].icon}.png`}
+                  // date={}
                   key={index}
                 />
               )
