@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import Loading from './Loading'
 // import styles from '../styles'
 
-const Forecast = (props) => {
+const FiveDayForecast = (props) => {
   if (props.isLoading === true) {
     return <Loading />
   }
@@ -10,23 +10,24 @@ const Forecast = (props) => {
     <div>
       <img src={props.source} />
       <p>{props.date}</p>
-      <ul>
+      {/* <ul>
         <li>{props.tempDay}</li>
         <li>{props.tempEve}</li>
         <li>{props.description}</li>
         <li>{props.humidity}</li>
-      </ul>
+      </ul> */}
     </div>
   )
 }
 
-Forecast.propTypes = {
+FiveDayForecast.propTypes = {
   isLoading: PropTypes.bool.isRequired,
+  source: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
   tempDay: PropTypes.number.isRequired,
   tempEve: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   humidity: PropTypes.number.isRequired,
-  source: PropTypes.string.isRequired
 }
 
-export default Forecast
+export default FiveDayForecast

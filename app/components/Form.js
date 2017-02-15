@@ -15,7 +15,7 @@ const Form = (props) => {
           onChange={props.onHandleChange}
         />
       </div>
-      <Link to={`/forecast/${props.city}`}>
+      <Link to={`/fivedayforecast/${props.city}`}>
         <button
           className='btn btn-success'
           style={props.styleButton}
