@@ -21,6 +21,10 @@ export default class ForecastContainer extends Component {
         })
       }.bind(this))
   }
+  convertEpoch (dt) {
+    let date = new Date(dt * 1000)
+    return date.toDateString()
+  }
   render () {
     console.log(this.state.weather)
     return (
@@ -36,7 +40,7 @@ export default class ForecastContainer extends Component {
                   description={day.weather[0].description}
                   humidity={day.humidity}
                   source={`http://openweathermap.org/img/w/${day.weather[0].icon}.png`}
-                  // date={}
+                  date={this.convertEpoch(day.dt)}
                   key={index}
                 />
               )
