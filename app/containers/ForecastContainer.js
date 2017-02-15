@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import weatherHelper from '../utils/weatherHelper'
-import FiveDayForecast from '../components/FiveDayForecast'
+import Forecast from '../components/Forecast'
 import styles from '../styles'
 
-export default class FiveDayForecastContainer extends Component {
+export default class ForecastContainer extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -13,7 +13,7 @@ export default class FiveDayForecastContainer extends Component {
   }
   componentDidMount () {
     var query = this.props.params.city
-    weatherHelper.getFiveDayForecast(query)
+    weatherHelper.getWeekForecast(query)
       .then(function (response) {
         this.setState({
           isLoading: false,
@@ -33,7 +33,7 @@ export default class FiveDayForecastContainer extends Component {
           {this.state.weather
             .map((day, index) => {
               return (
-                <FiveDayForecast
+                <Forecast
                   isLoading={this.state.isLoading}
                   tempDay={day.temp.day}
                   tempEve={day.temp.eve}
@@ -52,6 +52,6 @@ export default class FiveDayForecastContainer extends Component {
   }
 }
 
-FiveDayForecastContainer.propTypes = {
+ForecastContainer.propTypes = {
   params: PropTypes.object.isRequired
 }

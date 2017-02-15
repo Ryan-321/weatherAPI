@@ -2,14 +2,15 @@ import React from 'react'
 import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import Main from '../components/Main'
 import Home from '../components/Home'
-import FiveDayForecastContainer from '../containers/FiveDayForecastContainer'
+import Detail from '../components/Detail'
+import ForecastContainer from '../containers/ForecastContainer'
 
 const routes = (
   <Router history={hashHistory}>
     <Route path='/' component={Main}>
       <IndexRoute component={Home} />
-      <Route path='fivedayforecast/:city' component={FiveDayForecastContainer} />
-      
+      <Route path='forecast/:city' component={ForecastContainer} />
+      <Route path='detail' component={Detail} />
     </Route>
   </Router>
 )
