@@ -1,18 +1,14 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 
-export default class Detail extends Component {
-  render () {
-    return (
-      <h1>hey there</h1>
-    )
-  }
+const Detail = (props) => {
+  const data = props.location.state.data
+  return (
+    <h1>{data.humidity}</h1>
+  )
 }
 
 Detail.propTypes = {
-  tempDay: PropTypes.number.isRequired,
-  tempEve: PropTypes.number.isRequired,
-  description: PropTypes.string.isRequired,
-  humidity: PropTypes.number.isRequired
+  location: PropTypes.object.isRequired
 }
 
 // /* <ul>
@@ -21,3 +17,5 @@ Detail.propTypes = {
 //   <li>{props.description}</li>
 //   <li>{props.humidity}</li>
 // </ul> */
+
+export default Detail

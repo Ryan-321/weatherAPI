@@ -10,9 +10,10 @@ export default class ForecastContainer extends Component {
       isLoading: true,
       weather: []
     }
+    this.handleDetail = this.handleDetail.bind(this)
   }
   componentDidMount () {
-    var query = this.props.params.city
+    let query = this.props.params.city
     weatherHelper.getWeekForecast(query)
       .then(function (response) {
         this.setState({
@@ -25,23 +26,33 @@ export default class ForecastContainer extends Component {
     let date = new Date(dt * 1000)
     return date.toDateString()
   }
+  handleDetail (index) {
+    console.log(this.state.weather[index])
+    this.context.router.push({
+      pathname: `/detail/${this.props.params.city}`,
+      state: {
+        data: this.state.weather[index]
+      }
+    })
+  }
   render () {
-    console.log(this.state.weather)
+    console.log(this)
     return (
       <div className='container-fluid'>
+        <div className='row text-center'>
+          <h1 style={styles.skinny_header}>This City and State</h1>
+        </div>
         <div className='row' style={styles.forecast_row}>
           {this.state.weather
             .map((day, index) => {
               return (
                 <Forecast
+                  value={index}
+                  key={index}
                   isLoading={this.state.isLoading}
-                  tempDay={day.temp.day}
-                  tempEve={day.temp.eve}
-                  description={day.weather[0].description}
-                  humidity={day.humidity}
+                  initiateDetail={this.handleDetail}
                   source={`http://openweathermap.org/img/w/${day.weather[0].icon}.png`}
                   date={this.convertEpoch(day.dt)}
-                  key={index}
                 />
               )
             }
@@ -54,4 +65,8 @@ export default class ForecastContainer extends Component {
 
 ForecastContainer.propTypes = {
   params: PropTypes.object.isRequired
+}
+
+ForecastContainer.contextTypes = {
+  router: PropTypes.object.isRequired
 }

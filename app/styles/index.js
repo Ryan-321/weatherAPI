@@ -10,6 +10,10 @@ const styles = {
     fontWeight: '100',
     fontSize: '3em'
   },
+  skinny_header: {
+    fontWeight: '100',
+    fontSize: '3em'
+  },
   center: {
     margin: 'auto',
     alignSelf: 'center'
@@ -42,6 +46,9 @@ const styles = {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center'
+  },
+  forecast_item: {
+    margin: '1em'
   }
 }
 
