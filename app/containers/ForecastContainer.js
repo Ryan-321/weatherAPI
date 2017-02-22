@@ -32,6 +32,7 @@ export default class ForecastContainer extends Component {
     return date.toDateString()
   }
   handleDetail (index) {
+    console.log('FC-handleDetail')
     console.log(this.state.weather[index])
     this.context.router.push({
       pathname: `/detail/${this.props.params.city}`,
@@ -41,6 +42,7 @@ export default class ForecastContainer extends Component {
     })
   }
   render () {
+    console.log('FC-render')
     console.log(this)
     return (
       <div className='container-fluid'>
