@@ -49,6 +49,11 @@ const styles = {
   },
   forecast_item: {
     margin: '1em'
+  },
+  detail_list: {
+    listStyleType: 'none',
+    fontWeight: '100',
+    fontSize: '2em'
   }
 }
 

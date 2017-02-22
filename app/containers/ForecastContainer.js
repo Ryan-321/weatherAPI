@@ -12,15 +12,20 @@ export default class ForecastContainer extends Component {
     }
     this.handleDetail = this.handleDetail.bind(this)
   }
+  handleApiCallAndUpdateState (param) {
+    weatherHelper.getWeekForecast(param)
+    .then(function (response) {
+      this.setState({
+        isLoading: false,
+        weather: response
+      })
+    }.bind(this))
+  }
   componentDidMount () {
-    let query = this.props.params.city
-    weatherHelper.getWeekForecast(query)
-      .then(function (response) {
-        this.setState({
-          isLoading: false,
-          weather: response
-        })
-      }.bind(this))
+    this.handleApiCallAndUpdateState(this.props.params.city)
+  }
+  componentWillReceiveProps (nextProps) {
+    this.handleApiCallAndUpdateState(nextProps.params.city)
   }
   convertEpoch (dt) {
     let date = new Date(dt * 1000)
@@ -40,7 +45,7 @@ export default class ForecastContainer extends Component {
     return (
       <div className='container-fluid'>
         <div className='row text-center'>
-          <h1 style={styles.skinny_header}>This City and State</h1>
+          <h1 style={styles.skinny_header}>{this.props.params.city}</h1>
         </div>
         <div className='row' style={styles.forecast_row}>
           {this.state.weather
