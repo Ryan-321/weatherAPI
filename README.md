@@ -6,7 +6,7 @@
   - react-router
   - Babel
   - Webpack
-  - standard
+  - Standard
   - eslint
 
 ## Purpose
@@ -21,3 +21,7 @@
 ## Aha Moment
 
   When I reused the form component in the header and it worked like it was suppose to.  
+
+## Note
+
+  If you clone this down to play around with it you will need your on API key.
