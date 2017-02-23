@@ -16,7 +16,7 @@
 
 ## Challenges
 
-  Setting up the initial environment with webpack, babel, eslint and standard.  Was a little more lengthy than I anticipated because it was my first time and I got a little experimental.  I found this part the most fun.  Next most challenging part was passing around the data and trying to compose my components in the right way.  Remembering that data flows down in react helped.
+  Setting up the initial environment with webpack, babel, eslint and standard.  Was a little more lengthy than I anticipated because it was my first time and I got a little experimental.  I think next time I will use react-create-app.  Inline CSS.  It still doesn't feel right to me.  Need to do a little more research on best practices, but for this small app I thought it was fine.
 
 ## Aha Moment
 
