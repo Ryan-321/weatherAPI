@@ -6,10 +6,12 @@ const Forecast = (props) => {
   if (props.isLoading === true) {
     return <Loading />
   }
+  console.log('Forecast')
+  console.log(props)
   return (
     <div onClick={() => props.initiateDetail(props.value)} style={styles.forecast_item}>
       <img src={props.source} />
-      <p>{props.date}</p>
+      <p style={styles.detail_list}>{props.date}</p>
     </div>
   )
 }

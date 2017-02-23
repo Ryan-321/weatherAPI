@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import weatherHelper from '../utils/weatherHelper'
+import imageHelper from '../utils/imageHelper'
 import Forecast from '../components/Forecast'
 import styles from '../styles'
 
@@ -41,6 +42,9 @@ export default class ForecastContainer extends Component {
       }
     })
   }
+  getWeatherIcon (word) {
+    return imageHelper.getImage(word)
+  }
   render () {
     console.log('FC-render')
     console.log(this)
@@ -52,13 +56,14 @@ export default class ForecastContainer extends Component {
         <div className='row' style={styles.forecast_row}>
           {this.state.weather
             .map((day, index) => {
+              console.log(this.getWeatherIcon(day.weather[0].main))
               return (
                 <Forecast
                   value={index}
                   key={index}
                   isLoading={this.state.isLoading}
                   initiateDetail={this.handleDetail}
-                  source={`http://openweathermap.org/img/w/${day.weather[0].icon}.png`}
+                  source={this.getWeatherIcon(day.weather[0].main)}
                   date={this.convertEpoch(day.dt)}
                 />
               )
