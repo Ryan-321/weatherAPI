@@ -42,9 +42,6 @@ export default class ForecastContainer extends Component {
       }
     })
   }
-  getWeatherIcon (word) {
-    return imageHelper.getImage(word)
-  }
   render () {
     console.log('FC-render')
     console.log(this)
@@ -56,14 +53,13 @@ export default class ForecastContainer extends Component {
         <div className='row' style={styles.forecast_row}>
           {this.state.weather
             .map((day, index) => {
-              console.log(this.getWeatherIcon(day.weather[0].main))
               return (
                 <Forecast
                   value={index}
                   key={index}
                   isLoading={this.state.isLoading}
                   initiateDetail={this.handleDetail}
-                  source={this.getWeatherIcon(day.weather[0].main)}
+                  source={imageHelper.getImage(day.weather[0].main)}
                   date={this.convertEpoch(day.dt)}
                 />
               )

@@ -48,7 +48,14 @@ const styles = {
     justifyContent: 'center'
   },
   forecast_item: {
-    margin: '1em'
+    margin: '1em',
+    cursor: 'pointer'
+  },
+  forecast_image: {
+    width: '50%',
+    height: '100px',
+    margin: '0 auto',
+    display: 'block'
   },
   detail_list: {
     listStyleType: 'none',

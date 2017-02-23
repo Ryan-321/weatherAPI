@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 import styles from '../styles'
 import FormContainer from '../containers/FormContainer'
 
@@ -8,7 +9,9 @@ export default class Header extends Component {
       <nav className='navbar navbar-default' style={styles.header}>
         <div className='container-fluid'>
           <div className='navbar-header'>
-            <h1 className='navbar-brand' style={{color: '#fff', fontSize: '2em'}}>WeatherAPI</h1>
+            <Link to={'/'}>
+              <h1 className='navbar-brand' style={{color: '#fff', fontSize: '2em'}}>WeatherAPI</h1>
+            </Link>
           </div>
           <FormContainer
             passClass='navbar-form navbar-right'

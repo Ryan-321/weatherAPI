@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import Detail from '../components/Detail'
+import imageHelper from '../utils/imageHelper'
 
 export default class DetailContainer extends Component {
   constructor (props) {
@@ -17,6 +18,7 @@ export default class DetailContainer extends Component {
     console.log(this.props)
     return (
       <Detail
+        source={imageHelper.getImage(this.state.data.weather[0].main)}
         city={this.props.params.some_city}
         data={this.state.data}
         dt={this.convertEpoch(this.state.data.dt)}

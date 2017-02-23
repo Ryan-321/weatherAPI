@@ -2,11 +2,17 @@ const imageHelper = {
   getImage (weather) {
     switch (weather) {
       case 'Clear':
-        String('./app/images/sun.svg')
-        break
-      case 'Cloud':
-        String('./app/images/cloud.svg')
-        break
+        return String('./app/images/sun.svg')
+      case 'Clouds':
+        return String('./app/images/cloud.svg')
+      case 'Snow':
+        return String('./app/images/snowflake.svg')
+      case 'Rain':
+        return String('./app/images/water-drop.svg')
+      case 'Drizzle':
+        return String('./app/images/water-drop.svg')
+      case 'Thunderstorm':
+        return String('./app/images/storm.svg')
       default:
         return String('./app/images/sky.svg')
     }
