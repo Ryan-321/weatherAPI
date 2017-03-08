@@ -6,6 +6,7 @@ const Form = (props) => {
     <form
       className={props.passClass}
       onSubmit={props.onHandleSubmit}
+      style={props.passStyle}
     >
       <div className='form-group'>
         <input

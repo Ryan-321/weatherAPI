@@ -10,7 +10,7 @@ export default class Header extends Component {
         <div className='container-fluid'>
           <div className='navbar-header'>
             <Link to={'/'}>
-              <h1 className='navbar-brand' style={{color: '#fff', fontSize: '2em'}}>WeatherAPI</h1>
+              <h1 className='navbar-brand' style={styles.logo}>WeatherAPI</h1>
             </Link>
           </div>
           <FormContainer

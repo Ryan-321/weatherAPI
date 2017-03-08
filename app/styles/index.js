@@ -10,6 +10,12 @@ const styles = {
     fontWeight: '100',
     fontSize: '3em'
   },
+  logo: {
+    fontSize: '3em',
+    fontWeight: '100',
+    letterSpacing: '3px',
+    color: '#fff'
+  },
   skinny_header: {
     fontWeight: '100',
     fontSize: '3em'
@@ -39,7 +45,8 @@ const styles = {
     backgroundColor: 'orange'
   },
   form_header: {
-    marginTop: '1em'
+    marginTop: '2em',
+    marginRight: '1em'
   },
   forecast_row: {
     display: 'flex',
